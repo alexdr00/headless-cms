@@ -4,18 +4,27 @@
   "description": "Minimal headless cms",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watchAll"
+    "test": "NODE_ENV=testing nodemon --exec \"jest --watchAll\""
   },
   "author": "Alexander Rendon",
   "license": "MIT",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
     "express": "^4.16.4",
-    "mongoose": "^5.3.12"
+    "mongoose": "^5.3.12",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "moxios": "^0.4.0",
+    "supertest": "^3.3.0"
   }
 }
