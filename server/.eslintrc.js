@@ -9,6 +9,7 @@ module.exports = {
     "no-console": "off",
     "func-names": "off",
     "arrow-parens": "off",
+    "consistent-return": "off"
   },
   "overrides": [
     {

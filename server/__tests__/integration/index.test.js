@@ -1,15 +1,16 @@
 const request = require('supertest');
+const { app, serverConnection } = require('../../index');
 
 describe('Express', () => {
-  let server;
-
-  beforeEach(() => {
-    server = require('../../index');
+  afterEach((done) => {
+    serverConnection.close(() => {
+      done();
+    });
   });
 
-  it('/auth should respond with 200', () => {
-    request(server)
-      .get('/auth')
+  it('/auth/register should respond with 200', () => {
+    request(app)
+      .post('/auth/register')
       .end((err, response) => {
         expect(response.status).toBe(200);
       });

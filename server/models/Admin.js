@@ -4,13 +4,8 @@ const bcrypt = require('bcryptjs');
 const { Schema } = mongoose;
 
 const AdminSchema = new Schema({
-  username: {
-    type: String,
-    unique: true,
-  },
   email: {
     type: String,
-    unique: true,
     lowercase: true,
   },
   password: String,
@@ -23,7 +18,7 @@ AdminSchema.pre('save', function (next) {
     if (err) return next(err);
 
     this.password = hashedPassword;
-    return next();
+    next();
   });
 });
 
@@ -32,7 +27,7 @@ AdminSchema.methods.comparePassword = function (candidatePassword, callback) {
   bcrypt.compare(candidatePassword, this.password, (err, isEqual) => {
     if (err) return callback(err);
 
-    return callback(null, isEqual);
+    callback(null, isEqual);
   });
 };
 
