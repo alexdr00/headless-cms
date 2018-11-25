@@ -1,6 +1,6 @@
-const Authentication = require('./controllers/authentication');
-const changeLanguage = require('./controllers/changeLanguage');
-const makeMessage = require('./lib/makeMessage');
+const Authentication = require('../controllers/authentication');
+const changeLanguage = require('../controllers/changeLanguage');
+const makeMessage = require('../lib/makeMessage');
 
 module.exports = (app) => {
   app.post('/auth/register', Authentication.register);
