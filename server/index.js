@@ -2,18 +2,28 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const path = require('path');
+const i18n = require('i18n');
+
 const keys = require('./config');
 const router = require('./router');
 
+
 const app = express();
 
-mongoose.set('useCreateIndex', true);
+i18n.configure({
+  locales: ['es', 'en'],
+  defaultLocale: 'en',
+  directory: path.join(__dirname, '/locales'),
+  objectNotation: true,
+});
 
-if (process.env.NODE_ENV !== 'testing') {
-  mongoose.connect(keys.mongoUri, { useNewUrlParser: true });
-}
+// db
+mongoose.set('useCreateIndex', true);
+mongoose.connect(keys.mongoUri, { useNewUrlParser: true });
 
 // middleware
+app.use(i18n.init);
 app.use(morgan('combined'));
 app.use(bodyParser.json());
 

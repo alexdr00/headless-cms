@@ -1,0 +1,10 @@
+{
+	"msg": {
+		"error": {
+			"provideRegisterInfo": "You must provide email and password"
+    },
+    "info": {
+      "languageChanged": "Language changed successfully"
+    }
+	}
+}

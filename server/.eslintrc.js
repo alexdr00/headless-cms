@@ -11,6 +11,9 @@ module.exports = {
     "arrow-parens": "off",
     "consistent-return": "off"
   },
+  "globals": {
+    "language": false
+  },
   "overrides": [
     {
       "files": ["*.test.js", "*.spec.js"],
