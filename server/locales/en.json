@@ -1,10 +1,17 @@
 {
 	"msg": {
 		"error": {
-			"provideRegisterInfo": "You must provide email and password"
-    },
-    "info": {
-      "languageChanged": "Language changed successfully"
-    }
+			"provideRegisterInfo": "You must provide email and password",
+			"emailInUse": "Email is already in use"
+		},
+		"info": {
+			"languageChanged": "Language changed successfully"
+		},
+		"test": {
+			"helloWorld": "Hello World"
+		},
+		"success": {
+			"adminCreated": "Admin created successfully"
+		}
 	}
 }

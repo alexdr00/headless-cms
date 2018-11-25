@@ -1,10 +1,17 @@
 {
 	"msg": {
 		"error": {
-      "provideRegisterInfo": "Debes proveer un correo y una contraseña"
+      "provideRegisterInfo": "Debes proveer un correo y una contraseña",
+      "emailInUse": "El correo ya está en uso"
     },
     "info": {
-      "languageChanged": "El lenguaje cambió satisfactoriamente"
-    }
+      "languageChanged": "El lenguaje se cambió con éxito"
+    },
+    "test": {
+      "helloWorld": "Hola Mundo"
+    },
+    "success": {
+			"adminCreated": "El admin se creó con éxito"
+		}
 	}
 }
