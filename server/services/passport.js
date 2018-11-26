@@ -29,11 +29,13 @@ const jwtOptions = {
 };
 
 const jwtLogin = new JwtStrategy(jwtOptions, (payload, done) => {
-  Admin.findById(payload.sub).then(adminFound => {
-    if (!adminFound) return done(null, false);
+  Admin.findById(payload.sub)
+    .then(adminFound => {
+      if (!adminFound) return done(null, false);
 
-    return done(null, adminFound);
-  }).catch(err => done(err));
+      return done(null, adminFound);
+    })
+    .catch(err => done(err));
 });
 
 passport.use(jwtLogin);

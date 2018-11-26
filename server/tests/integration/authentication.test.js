@@ -3,15 +3,14 @@ const request = require('supertest');
 const Admin = require('../../models/Admin');
 const app = require('../../index');
 
-afterEach((done) => {
-  mongoose.connection
-    .dropCollection('admins', () => {
-      done();
-    });
+afterEach(done => {
+  mongoose.connection.dropCollection('admins', () => {
+    done();
+  });
 });
 
 describe('Post to /auth/register', () => {
-  it('Should save admin to database', (done) => {
+  it('Should save admin to database', done => {
     request(app)
       .post('/auth/register')
       .send({
@@ -25,7 +24,7 @@ describe('Post to /auth/register', () => {
   });
 
   describe('Validation', () => {
-    it('Should return error when email is blank', (done) => {
+    it('Should return error when email is blank', done => {
       request(app)
         .post('/auth/register')
         .send({
@@ -38,7 +37,7 @@ describe('Post to /auth/register', () => {
         });
     });
 
-    it('Should return error when email already exists', (done) => {
+    it('Should return error when email already exists', done => {
       const email = 'example@example.com';
 
       const newAdmin = new Admin({

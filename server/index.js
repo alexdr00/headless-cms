@@ -20,7 +20,10 @@ i18n.configure({
 
 // db
 mongoose.set('useCreateIndex', true);
-mongoose.connect(keys.mongoUri, { useNewUrlParser: true });
+mongoose.connect(
+  keys.mongoUri,
+  { useNewUrlParser: true },
+);
 
 // middleware
 app.use(i18n.init);

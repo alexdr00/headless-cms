@@ -19,9 +19,7 @@ exports.register = (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
-    return res
-      .status(422)
-      .json(makeMessage('msg.error.provideRegisterInfo', 'error'));
+    return res.status(422).json(makeMessage('msg.error.provideRegisterInfo', 'error'));
   }
 
   Admin.findOne({ email }, (err, existingAdmin) => {

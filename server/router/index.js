@@ -9,7 +9,7 @@ const makeMessage = require('../lib/makeMessage');
 const requireSignIn = passport.authenticate('local', { session: false });
 // const requireAuth = passport.authenticate('jwt', { session: false });
 
-module.exports = (app) => {
+module.exports = app => {
   app.post('/auth/register', Authentication.register);
 
   app.get('/', (req, res) => {
