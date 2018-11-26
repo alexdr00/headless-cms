@@ -1,4 +1,4 @@
 module.exports = {
-  setupTestFrameworkScriptFile: './jest.setup.js',
-  verbose: true,
+  setupTestFrameworkScriptFile: './tests/setup.js',
+  verbose: false,
 };

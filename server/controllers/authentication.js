@@ -10,6 +10,11 @@ const tokenForAdmin = admin => {
   return jwt.encode({ sub: admin.id, iat: timestamp }, keys.jwtSecret);
 };
 
+exports.signIn = (req, res, next) => {
+  res.json({ token: tokenForAdmin(req.user) });
+  next();
+};
+
 exports.register = (req, res, next) => {
   const { email, password } = req.body;
 
@@ -32,7 +37,7 @@ exports.register = (req, res, next) => {
     });
 
     newAdmin.save().then(() => {
-      res.send({
+      res.json({
         token: tokenForAdmin(newAdmin),
         ...makeMessage('msg.success.adminCreated', 'success'),
       });

@@ -4,7 +4,7 @@
   "description": "Minimal headless cms",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=testing nodemon --exec \"jest\""
+    "test": "NODE_ENV=testing jest --watchAll"
   },
   "author": "Alexander Rendon",
   "license": "MIT",

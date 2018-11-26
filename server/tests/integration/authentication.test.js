@@ -1,14 +1,7 @@
 const mongoose = require('mongoose');
 const request = require('supertest');
 const Admin = require('../../models/Admin');
-const { app, serverConnection } = require('../../index');
-
-beforeAll((done) => {
-  mongoose.connect('mongodb://localhost:27017/minim-cms-test');
-  serverConnection.close(() => {
-    done();
-  });
-});
+const app = require('../../index');
 
 afterEach((done) => {
   mongoose.connection
