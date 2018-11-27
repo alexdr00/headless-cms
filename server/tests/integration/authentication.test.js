@@ -26,7 +26,7 @@ describe('Post to /auth/register', () => {
       });
   });
 
-  describe('Validation', () => {
+  describe('Validate Registration', () => {
     it('Should return error when email is blank', done => {
       request(app)
         .post('/auth/register')
@@ -55,7 +55,7 @@ describe('Post to /auth/register', () => {
 });
 
 describe('Post to /auth/sign_in', () => {
-  it('Should return sign-in token when credentials are OK', async done => {
+  it('Should return sign-in token when credentials exist in the db', async done => {
     const { email, password } = await saveAdminInDb();
 
     request(app)
@@ -65,6 +65,17 @@ describe('Post to /auth/sign_in', () => {
         const tokenEncoded = res.body.token;
         const tokenDecoded = jwt.decode(tokenEncoded, keys.jwtSecret);
         expect(tokenDecoded).toHaveProperty('sub');
+        expect(tokenDecoded).toHaveProperty('iat');
+        done();
+      });
+  });
+
+  it("Should return status: unauthorized when credentials don't exist in the db", done => {
+    request(app)
+      .post('/auth/sign_in')
+      .send({ email: 'inexistent@inexistent.com', password: '123456' })
+      .end((err, res) => {
+        expect(res.status).toBe(401);
         done();
       });
   });

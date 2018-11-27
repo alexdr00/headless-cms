@@ -12,10 +12,6 @@ const requireSignIn = passport.authenticate('local', { session: false });
 module.exports = app => {
   app.post('/auth/register', Authentication.register);
 
-  app.get('/', (req, res) => {
-    res.send('hola');
-  });
-
   app.get('/change_language', changeLanguage, (req, res) => {
     res.json(makeMessage('msg.info.languageChanged', 'info'));
   });

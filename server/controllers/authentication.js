@@ -16,30 +16,26 @@ exports.signIn = (req, res, next) => {
   next();
 };
 
-exports.register = (req, res, next) => {
+exports.register = async (req, res, next) => {
   const { email, password } = req.body;
 
   if (!email || !password) {
     return res.status(422).json(makeMessage('msg.error.provideRegisterInfo', 'error'));
   }
 
-  Admin.findOne({ email }, (err, existingAdmin) => {
-    if (err) return next(err);
+  const existingAdmin = await Admin.findOne({ email });
 
-    if (existingAdmin) {
-      return res.status(422).json(makeMessage('msg.error.emailInUse', 'error'));
-    }
+  if (existingAdmin) {
+    return res.status(422).json(makeMessage('msg.error.emailInUse', 'error'));
+  }
 
-    const newAdmin = new Admin({
-      email,
-      password,
-    });
+  const newAdmin = new Admin({ email, password });
+  await newAdmin.save();
 
-    newAdmin.save().then(() => {
-      res.json({
-        token: tokenForAdmin(newAdmin),
-        ...makeMessage('msg.success.adminCreated', 'success'),
-      });
-    });
+  res.json({
+    token: tokenForAdmin(newAdmin),
+    ...makeMessage('msg.success.adminCreated', 'success'),
   });
+
+  next();
 };

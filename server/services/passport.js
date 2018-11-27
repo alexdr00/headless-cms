@@ -19,7 +19,8 @@ const localLogin = new LocalStrategy(localOptions, async (email, password, done)
   return done(null, adminFound);
 });
 
-// JWT Strategy (This gets the sign-in token for the browser to be used)
+// JWT Strategy
+// This is for signing in. Returns a token for the browser.
 const jwtOptions = {
   jwtFromRequest: ExtractJwt.fromHeader('authorization'),
   secretOrKey: keys.jwtSecret,
