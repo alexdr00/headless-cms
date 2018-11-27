@@ -23,11 +23,13 @@ AdminSchema.pre('save', function (next) {
 });
 
 // Method for comparing plain password with hash-salted password
-AdminSchema.methods.comparePassword = function (candidatePassword, callback) {
-  bcrypt.compare(candidatePassword, this.password, (err, isEqual) => {
-    if (err) return callback(err);
+AdminSchema.methods.comparePassword = function (candidatePassword) {
+  return new Promise((resolve, reject) => {
+    bcrypt.compare(candidatePassword, this.password, (err, isEqual) => {
+      if (err) reject(err);
 
-    callback(null, isEqual);
+      resolve(isEqual);
+    });
   });
 };
 

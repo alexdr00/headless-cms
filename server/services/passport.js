@@ -9,17 +9,14 @@ const keys = require('../config');
 // Local Strategy (This is just for signing in)
 const localOptions = { usernameField: 'email' };
 
-const localLogin = new LocalStrategy(localOptions, (email, password, done) => {
-  Admin.findOne({ email }, (err, adminFound) => {
-    if (err) return done(err);
-    if (!adminFound) return done(null, false);
+const localLogin = new LocalStrategy(localOptions, async (email, password, done) => {
+  const adminFound = await Admin.findOne({ email });
+  if (!adminFound) return done(null, false);
 
-    adminFound.comparePassword(password, (error, isEqual) => {
-      if (error) return done(err);
-      if (!isEqual) return done(null, false);
-      return done(null, adminFound);
-    });
-  });
+  const isMatch = await adminFound.comparePassword(password);
+  if (!isMatch) return done(null, false);
+
+  return done(null, adminFound);
 });
 
 // JWT Strategy (This gets the sign-in token for the browser to be used)
@@ -28,14 +25,12 @@ const jwtOptions = {
   secretOrKey: keys.jwtSecret,
 };
 
-const jwtLogin = new JwtStrategy(jwtOptions, (payload, done) => {
-  Admin.findById(payload.sub)
-    .then(adminFound => {
-      if (!adminFound) return done(null, false);
+const jwtLogin = new JwtStrategy(jwtOptions, async (payload, done) => {
+  const adminFound = await Admin.findById(payload.sub);
 
-      return done(null, adminFound);
-    })
-    .catch(err => done(err));
+  if (!adminFound) return done(null, false);
+
+  return done(null, adminFound);
 });
 
 passport.use(jwtLogin);

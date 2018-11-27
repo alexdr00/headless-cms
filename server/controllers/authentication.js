@@ -1,6 +1,7 @@
 const jwt = require('jwt-simple');
 const Admin = require('../models/Admin');
 const keys = require('../config');
+
 const makeMessage = require('../lib/makeMessage');
 
 // Generates a jwt token
