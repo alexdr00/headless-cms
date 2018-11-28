@@ -15,7 +15,6 @@ i18n.configure({
   locales: ['es', 'en'],
   defaultLocale: 'en',
   directory: path.join(__dirname, '/locales'),
-  objectNotation: true,
 });
 
 // db

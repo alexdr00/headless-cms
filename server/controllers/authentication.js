@@ -2,7 +2,7 @@ const jwt = require('jwt-simple');
 const Admin = require('../models/Admin');
 const keys = require('../config');
 
-const makeMessage = require('../lib/makeMessage');
+const { makeMessage, makeErrorMessages } = require('../lib/messageMaker');
 
 // Generates a jwt token
 const tokenForAdmin = admin => {
@@ -19,14 +19,10 @@ exports.signIn = (req, res, next) => {
 exports.register = async (req, res, next) => {
   const { email, password } = req.body;
 
-  if (!email || !password) {
-    return res.status(422).json(makeMessage('msg.error.provideRegisterInfo', 'error'));
-  }
-
   const existingAdmin = await Admin.findOne({ email });
 
   if (existingAdmin) {
-    return res.status(422).json(makeMessage('msg.error.emailInUse', 'error'));
+    return res.status(422).json(makeErrorMessages(['Email is already in use']));
   }
 
   const newAdmin = new Admin({ email, password });
@@ -34,7 +30,7 @@ exports.register = async (req, res, next) => {
 
   res.json({
     token: tokenForAdmin(newAdmin),
-    ...makeMessage('msg.success.adminCreated', 'success'),
+    ...makeMessage('Admin created successfully', 'success'),
   });
 
   next();
