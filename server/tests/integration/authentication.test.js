@@ -13,44 +13,19 @@ afterEach(done => {
 });
 
 describe('Post to /auth/register', () => {
-  it('Should save admin to database', done => {
+  it('Should save admin to database when data is OK', done => {
     request(app)
       .post('/auth/register')
       .send({
         email: 'example@example.com',
-        password: '12345',
+        password: 'SafePassword1',
+        passwordConfirmation: 'SafePassword1',
       })
       .end((err, res) => {
         expect(res.body.message.body).toBe('Admin created successfully');
+        expect(res.status).toBe(200);
         done();
       });
-  });
-
-  describe('Validate Registration', () => {
-    it('Should return error when email is blank', done => {
-      request(app)
-        .post('/auth/register')
-        .send({
-          email: '',
-          password: '12345',
-        })
-        .end((err, res) => {
-          expect(res.body.message.body).toBe('You must provide email and password');
-          done();
-        });
-    });
-
-    it('Should return error when email already exists', async done => {
-      const { email, password } = await saveAdminInDb();
-
-      request(app)
-        .post('/auth/register')
-        .send({ email, password })
-        .end((err, res) => {
-          expect(res.body.message.body).toBe('Email is already in use');
-          done();
-        });
-    });
   });
 });
 

@@ -1,7 +1,12 @@
 {
-  "You must provide email and password": "You must provide email and password",
-  "Email is already in use": "Email is already in use",
-  "Language changed successfully": "Language changed successfully",
-  "Hello World": "Hello World",
-  "Admin created successfully": "Admin created successfully"
+	"You must provide email and password": "You must provide email and password",
+	"Email is already in use": "Email is already in use",
+	"Language changed successfully": "Language changed successfully",
+	"Hello World": "Hello World",
+	"Admin created successfully": "Admin created successfully",
+	"Password should contain at least: 7 characters, 1 uppercase letter, 1 lowercase letter and 1 number": "Password should contain at least: 7 characters, 1 uppercase letter, 1 lowercase letter and 1 number",
+	"Password must be equal to the confirmation": "Password must be equal to the confirmation",
+	"Invalid Email": "Invalid Email",
+	"Invalid value": "Invalid value",
+	"Password too insecure": "Password too insecure"
 }

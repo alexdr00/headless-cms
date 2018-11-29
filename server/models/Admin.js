@@ -4,12 +4,9 @@ const bcrypt = require('bcryptjs');
 const { Schema } = mongoose;
 
 const AdminSchema = new Schema({
-  email: {
-    type: String,
-    lowercase: true,
-  },
+  email: { type: String, lowercase: true, trim: true },
   password: String,
-  role: String,
+  // role: String,
 });
 
 // Hash salt password before saving into the db
