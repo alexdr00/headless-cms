@@ -10,8 +10,9 @@ const validatePassword = password => {
    */
   const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{7,}$/gm;
   const match = password.match(regex);
+  const isPasswordValid = match !== null;
 
-  return match !== null;
+  return isPasswordValid;
 };
 
 module.exports = [
