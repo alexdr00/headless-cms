@@ -1,7 +1,7 @@
 const jwt = require('jwt-simple');
 const { validationResult } = require('express-validator/check');
 
-const Admin = require('../models/Admin');
+const Admin = require('../models/base/Admin');
 const keys = require('../config');
 
 const { makeMessage, makeErrorMessages } = require('../lib/messageMaker');
