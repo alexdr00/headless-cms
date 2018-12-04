@@ -1,9 +1,9 @@
 const passport = require('passport');
 require('../services/passport');
 
-const Authentication = require('../controllers/base/authentication');
-const changeLanguage = require('../controllers/base/changeLanguage');
-const createContentType = require('../controllers/base/createContentType');
+const Authentication = require('../controllers/authentication');
+const changeLanguage = require('../controllers/changeLanguage');
+const createContentType = require('../controllers/createContentType');
 const makeMessage = require('../lib/messageMaker');
 const registerValidationChain = require('../lib/registrationValidationChain');
 

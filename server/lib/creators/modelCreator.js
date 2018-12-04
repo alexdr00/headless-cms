@@ -1,5 +1,5 @@
 const fs = require('fs');
-const modelTemplate = require('./templates/modelTemplate');
+const modelTemplate = require('../templates/modelTemplate');
 
 const generateModelStructure = (contentTypeId, fields) => {
   const fieldsValues = Object.values(fields);

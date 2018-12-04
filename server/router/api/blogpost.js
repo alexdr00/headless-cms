@@ -1,11 +1,11 @@
 const express = require('express');
 
 const router = express.Router();
-const controller = require('../../lib/createControllerStructure')('blogpost');
+const controller = require('../../lib/creators/createControllerStructure')('blogpost');
 
 router.post('/blogpost/create', controller.create);
 
-router.get('/blogpost', controller.readAll);
+router.get('/blogpost/all', controller.readAll);
 
 router.get('/blogpost/:id', controller.readOne);
 

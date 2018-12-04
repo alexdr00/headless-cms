@@ -1,11 +1,11 @@
 const express = require('express');
 
 const router = express.Router();
-const controller = require('../../lib/createControllerStructure')('product');
+const controller = require('../../lib/creators/createControllerStructure')('product');
 
 router.post('/product/create', controller.create);
 
-router.get('/product', controller.readAll);
+router.get('/product/all', controller.readAll);
 
 router.get('/product/:id', controller.readOne);
 

@@ -5,7 +5,7 @@ const controller = require('../../lib/createControllerStructure')('${contentType
 
 router.post('/${contentTypeName}/create', controller.create);
 
-router.get('/${contentTypeName}', controller.readAll);
+router.get('/${contentTypeName}/all', controller.readAll);
 
 router.get('/${contentTypeName}/:id', controller.readOne);
 

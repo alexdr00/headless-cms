@@ -1,7 +1,7 @@
-const ContentType = require('../../models/base/ContentType');
-const modelCreator = require('../../lib/modelCreator');
-const routerCreator = require('../../lib/routerCreator');
-const { makeMessage } = require('../../lib/messageMaker');
+const ContentType = require('../models/core/ContentType');
+const modelCreator = require('../lib/creators/modelCreator');
+const routerCreator = require('../lib/creators/routerCreator');
+const { makeMessage } = require('../lib/messageMaker');
 
 const createContentType = async (req, res) => {
   const fields = req.body;

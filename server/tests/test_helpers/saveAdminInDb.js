@@ -1,4 +1,4 @@
-const Admin = require('../../models/base/Admin');
+const Admin = require('../../models/core/Admin');
 
 const saveAdminInDb = async (email = 'test@test.com', password = 'SafePassword1') => {
   const newAdmin = new Admin({ password, email });
