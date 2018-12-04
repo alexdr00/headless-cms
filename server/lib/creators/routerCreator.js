@@ -3,7 +3,9 @@ const routerTemplate = require('../templates/routerTemplate');
 
 const routerCreator = contentTypeName => {
   const newRouter = routerTemplate(contentTypeName);
-  fs.writeFileSync(`${__dirname}/../router/api/${contentTypeName}.js`, newRouter);
+  const routersPath = `${__dirname}/../router/api/${contentTypeName}.js`;
+
+  fs.writeFileSync(routersPath, newRouter);
 };
 
 module.exports = routerCreator;

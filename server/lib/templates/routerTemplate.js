@@ -1,6 +1,8 @@
 module.exports = contentTypeName => `const express = require('express');
 
 const router = express.Router();
+
+// Relative to /router/api
 const controller = require('../../lib/createControllerStructure')('${contentTypeName}');
 
 router.post('/${contentTypeName}/create', controller.create);
