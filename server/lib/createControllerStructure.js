@@ -11,7 +11,7 @@ const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1);
  */
 const createControllerStructure = contentTypeName => {
   // eslint-disable-next-line
-  const Model = require(`../../models/${contentTypeName}`);
+  const Model = require(`./../models/${contentTypeName}`);
   const controllerStructure = {};
 
   controllerStructure.create = async (req, res) => {

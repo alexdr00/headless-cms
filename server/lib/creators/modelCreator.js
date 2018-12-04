@@ -7,7 +7,7 @@ const modelTemplate = require('../templates/modelTemplate');
  * @param {Object} fields - Fields the new Content Type will have.
  * @returns {Object} Model structure that will be written in the file.
  */
-const generateModelStructure = (contentTypeId, fields) => {
+const generateModelStructure = (contentTypeId, contentTypeName, fields) => {
   const fieldsValues = Object.values(fields);
 
   const contentTypeReference = {
@@ -23,6 +23,8 @@ const generateModelStructure = (contentTypeId, fields) => {
 
   // Merges all the documents and creates the model structure
   fieldsValues.forEach(fieldValue => {
+    // Skip the Content Type name field.
+    if (fieldValue === contentTypeName) return;
     const generatedModelKey = fieldValue;
     const generatedModelValue = 'string';
     const modelDocument = { [generatedModelKey]: generatedModelValue };
@@ -35,12 +37,12 @@ const generateModelStructure = (contentTypeId, fields) => {
 
 // Creates the model with the specified structure.
 const modelCreator = (contentTypeId, contentTypeName, fields) => {
-  const modelStructure = generateModelStructure(contentTypeId, fields);
+  const modelStructure = generateModelStructure(contentTypeId, contentTypeName, fields);
 
   // It is necessry to stringify the structure so that it works correctly with the template.
   const modelStructureStringified = JSON.stringify(modelStructure, null, 2);
   const newModel = modelTemplate(contentTypeName, modelStructureStringified);
-  const modelsPath = `${__dirname}/../models/${contentTypeName}.js`;
+  const modelsPath = `${__dirname}/../../models/${contentTypeName}.js`;
 
   // Writes the model
   fs.writeFileSync(modelsPath, newModel);
