@@ -1,4 +1,4 @@
-const unStringifyReference = stringifiedFields => stringifiedFields.replace('"Schema.Types.ObjectId"', 'Schema.Types.ObjectId');
+const unStringifyReference = stringifiedStructure => stringifiedStructure.replace('"Schema.Types.ObjectId"', 'Schema.Types.ObjectId');
 
 module.exports = (modelName, fields) => `const mongoose = require('mongoose');
 

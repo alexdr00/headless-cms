@@ -7,7 +7,8 @@ const i18n = require('i18n');
 const http = require('http');
 
 const keys = require('./config');
-const router = require('./router');
+const baseRouter = require('./router');
+const apiRouters = require('./router/apiRouters');
 
 const app = express();
 
@@ -30,7 +31,8 @@ app.use(morgan('combined'));
 app.use(bodyParser.json());
 
 // routes
-router(app);
+baseRouter(app);
+apiRouters(app);
 
 // server init
 const port = process.env.PORT || 3001;

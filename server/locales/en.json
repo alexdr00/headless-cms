@@ -8,5 +8,10 @@
 	"Password must be equal to the confirmation": "Password must be equal to the confirmation",
 	"Invalid Email": "Invalid Email",
 	"Invalid value": "Invalid value",
-	"Password too insecure": "Password too insecure"
+	"Password too insecure": "Password too insecure",
+	"Content Type Created Successfully": "Content Type Created Successfully",
+	"product created successfully": "product created successfully",
+	"blogpost created successfully": "blogpost created successfully",
+	"product updated successfully": "product updated successfully",
+	"product removed successfully": "product removed successfully"
 }

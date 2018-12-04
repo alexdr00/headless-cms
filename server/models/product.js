@@ -4,9 +4,9 @@ const { Schema } = mongoose;
 /* eslint-disable */
 
 const productSchema = Schema({
-  "contentType": {
+  "_contentType": {
     "type": Schema.Types.ObjectId,
-    "default": "5c01e58c1abebe3722a0d855",
+    "default": "5c05bc9732a9b6042b8584a6",
     "ref": "ContentType"
   },
   "product": "string",

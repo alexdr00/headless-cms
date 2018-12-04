@@ -1,8 +1,8 @@
 const fs = require('fs');
-const modelTemplate = require('../lib/modelTemplate');
+const modelTemplate = require('./templates/modelTemplate');
 
 const generateModelStructure = (contentTypeId, fields) => {
-  const fieldsKeys = Object.keys(fields);
+  const fieldsValues = Object.values(fields);
 
   const contentTypeReference = {
     _contentType: {
@@ -14,21 +14,21 @@ const generateModelStructure = (contentTypeId, fields) => {
 
   const generatedModelStructure = { ...contentTypeReference };
 
-  fieldsKeys.forEach(fieldKey => {
-    const generatedModelKey = fieldKey;
+  fieldsValues.forEach(fieldValue => {
+    const generatedModelKey = fieldValue;
     const generatedModelValue = 'string';
     const modelDocument = { [generatedModelKey]: generatedModelValue };
     // Merges all the documents and creates the model structure
     Object.assign(generatedModelStructure, modelDocument);
   });
 
-  return generateModelStructure;
+  return generatedModelStructure;
 };
 
-const modelCreator = (contentTypeId, fields) => {
+const modelCreator = (contentTypeId, contentTypeName, fields) => {
   const modelStructure = generateModelStructure(contentTypeId, fields);
+
   const modelStructureStringified = JSON.stringify(modelStructure, null, 2);
-  const { contentTypeName } = fields;
 
   const newModel = modelTemplate(contentTypeName, modelStructureStringified);
 
