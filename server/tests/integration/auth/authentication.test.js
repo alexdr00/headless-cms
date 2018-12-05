@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const request = require('supertest');
 const jwt = require('jwt-simple');
 
-const saveAdminInDb = require('../test_helpers/saveAdminInDb');
-const app = require('../../index');
-const keys = require('../../config');
+const saveAdminInDb = require('../../test_helpers/saveAdminInDb');
+const app = require('../../../index');
+const keys = require('../../../config');
 
 afterEach(done => {
   mongoose.connection.dropCollection('admins', () => {

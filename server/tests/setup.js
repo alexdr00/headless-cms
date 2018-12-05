@@ -13,3 +13,9 @@ beforeAll(done => {
     done();
   });
 });
+
+afterAll(done => {
+  mongoose.connection.dropDatabase(() => {
+    done();
+  });
+});

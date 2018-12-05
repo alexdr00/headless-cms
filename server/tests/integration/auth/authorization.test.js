@@ -1,11 +1,9 @@
 const passport = require('passport');
 const request = require('supertest');
-const jwt = require('jwt-simple');
 
-const saveAdminInDb = require('../test_helpers/saveAdminInDb');
-const app = require('../../index');
-const keys = require('../../config');
-require('../../services/passport');
+const fakeJwtToken = require('../../test_helpers/fakeJwtToken');
+const app = require('../../../index');
+require('../../../services/passport');
 
 const requireAuth = passport.authenticate('jwt', { session: false });
 
@@ -29,11 +27,7 @@ describe('Get to /protected_route', () => {
   });
 
   it('Should return the wanted resource if the user has the token in the headers', async done => {
-    // Faking the token
-    const { savedAdmin } = await saveAdminInDb();
-    const sub = savedAdmin.id;
-    const iat = new Date().getTime();
-    const token = jwt.encode({ sub, iat }, keys.jwtSecret);
+    const token = await fakeJwtToken();
 
     request(app)
       .get('/protected_route')

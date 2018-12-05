@@ -1,6 +1,6 @@
 const request = require('supertest');
-const saveAdminInDb = require('../test_helpers/saveAdminInDb');
-const app = require('../../index');
+const saveAdminInDb = require('../../test_helpers/saveAdminInDb');
+const app = require('../../../index');
 
 describe('Validate Registration', () => {
   it('Should return error when either email is blank', done => {

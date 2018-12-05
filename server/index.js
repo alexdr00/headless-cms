@@ -12,6 +12,8 @@ const apiRouters = require('./router/apiRouters');
 
 const app = express();
 
+global.__basedir = __dirname;
+
 i18n.configure({
   locales: ['es', 'en'],
   defaultLocale: 'en',
