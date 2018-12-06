@@ -17,9 +17,12 @@ const createControllerStructure = contentTypeName => {
   controllerStructure.create = async (req, res) => {
     const data = req.body;
     const newItem = new Model(data);
-    await newItem.save();
+    const newItemSaved = await newItem.save();
 
-    res.json(makeMessage(`${capitalize(contentTypeName)} created successfully`, 'success'));
+    res.json({
+      ...newItemSaved._doc,
+      ...makeMessage(`${capitalize(contentTypeName)} created successfully`, 'success'),
+    });
   };
 
   controllerStructure.readAll = async (req, res) => {
@@ -30,7 +33,6 @@ const createControllerStructure = contentTypeName => {
 
   controllerStructure.readOne = async (req, res) => {
     const { id } = req.params;
-    console.log(req.params);
     const item = await Model.findById(id);
 
     res.json(item);
@@ -39,9 +41,12 @@ const createControllerStructure = contentTypeName => {
   controllerStructure.update = async (req, res) => {
     const { id } = req.params;
     const data = req.body;
-    await Model.findByIdAndUpdate(id, data);
+    const itemUpdated = await Model.findByIdAndUpdate(id, data, { new: true });
 
-    res.json(makeMessage(`${capitalize(contentTypeName)} updated successfully`, 'success'));
+    res.json({
+      ...itemUpdated._doc,
+      ...makeMessage(`${capitalize(contentTypeName)} updated successfully`, 'success'),
+    });
   };
 
   controllerStructure.remove = async (req, res) => {

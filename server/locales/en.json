@@ -15,5 +15,8 @@
 	"product updated successfully": "product updated successfully",
 	"product removed successfully": "product removed successfully",
 	"Producto created successfully": "Producto created successfully",
-	"Producto updated successfully": "Producto updated successfully"
+	"Producto updated successfully": "Producto updated successfully",
+	"Apitest created successfully": "Apitest created successfully",
+	"Apitest updated successfully": "Apitest updated successfully",
+	"Apitest removed successfully": "Apitest removed successfully"
 }

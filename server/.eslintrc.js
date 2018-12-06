@@ -11,6 +11,7 @@ module.exports = {
     'arrow-parens': 'off',
     'consistent-return': 'off',
     'no-underscore-dangle': 'off',
+    'import/no-dynamic-require': 'off',
   },
   globals: {
     __basedir: false,

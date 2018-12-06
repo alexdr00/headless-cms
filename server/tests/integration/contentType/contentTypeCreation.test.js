@@ -51,7 +51,7 @@ describe('Post to /content_type/create', () => {
     const files = fs.readdirSync(generatedRoutesPath);
     expect(files).toContain(`${contentTypeName}.js`);
 
-    // Deletes genereated router
+    // Deletes generated router
     fs.unlink(`${generatedRoutesPath}/${contentTypeName}.js`, () => {
       done();
     });
