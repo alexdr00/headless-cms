@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import { linksStructureType } from './propTypes';
 import style from './styles.module.scss';
-import layout from '../../shared/styles/layout.module.scss';
 import NavLinksSection from './NavLinksSection';
 import MenuButton from './MenuButton';
 
@@ -18,7 +17,7 @@ class Sidenav extends Component {
   };
 
   render() {
-    const { links } = this.props;
+    const { links, className: layout } = this.props;
     const { isCollapsed } = this.state;
     const sidenavCollapsed = isCollapsed ? style.sidenavCollapsed : '';
 

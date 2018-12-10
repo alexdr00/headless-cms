@@ -1,11 +1,12 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import layout from '../shared/styles/layout.module.scss';
 import Sidenav from '../components/sidenav/Sidenav';
 import { links } from '../config/links';
 
 const App = ({ children }) => (
   <div>
-    <Sidenav links={links} />
+    <Sidenav links={links} className={layout} />
     {children}
   </div>
 );
