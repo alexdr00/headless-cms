@@ -7,7 +7,12 @@ import { linkType } from './propTypes';
 const Link = ({
   to, label, icon = 'link', iconType = 'fas',
 }) => (
-  <NavLink className={style.navLink} activeClassName={style.navLinkActive} exact to={to}>
+  <NavLink
+    className={style.navLink}
+    activeClassName={style.navLinkActive}
+    exact
+    to={to}
+  >
     <li>
       <FontAwesomeIcon className={style.navIcon} icon={[iconType, icon]} />
       {label}

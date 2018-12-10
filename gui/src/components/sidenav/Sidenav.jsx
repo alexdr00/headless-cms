@@ -23,7 +23,10 @@ class Sidenav extends Component {
 
     return (
       <div className={`${style.sidenav} ${layout.sidenav} ${sidenavCollapsed}`}>
-        <MenuButton onClick={this.handleMenuButtonClick} isCollapsed={isCollapsed} />
+        <MenuButton
+          onClick={this.handleMenuButtonClick}
+          isCollapsed={isCollapsed}
+        />
         <NavLinksSection links={links} />
       </div>
     );
