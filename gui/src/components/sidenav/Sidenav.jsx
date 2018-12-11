@@ -4,6 +4,7 @@ import { linksStructureType } from './propTypes';
 import style from './styles.module.scss';
 import NavLinksSection from './NavLinksSection';
 import MenuButton from './MenuButton';
+import Logo from './Logo';
 
 class Sidenav extends Component {
   state = {
@@ -23,6 +24,7 @@ class Sidenav extends Component {
 
     return (
       <div className={`${style.sidenav} ${layout.sidenav} ${sidenavCollapsed}`}>
+        <Logo />
         <MenuButton
           onClick={this.handleMenuButtonClick}
           isCollapsed={isCollapsed}

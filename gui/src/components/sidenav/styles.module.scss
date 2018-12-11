@@ -59,7 +59,7 @@
 .navLinksSection {
   display: flex;
   flex-direction: column;
-  height: 65%;
+  height: 85%;
   background-color: blue;
   list-style-type: none;
   padding: 0;
@@ -91,8 +91,28 @@
       color: crimson;
     }
   }
+
+  .navIcon {
+    margin-right: 10px;
+  }
 }
 
-.navIcon {
-  margin-right: 10px;
+.logo {
+  background-color: white;
+  margin-bottom: auto;
+
+  &Text {
+    // font-family: 'Kalam', cursive;
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
 }

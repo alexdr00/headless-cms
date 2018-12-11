@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
-// TODO: Test the application with this new structured.
 const ContentTypeSchema = new Schema({
   contentTypeName: String,
   shortText: [String],
