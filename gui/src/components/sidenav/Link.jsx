@@ -13,9 +13,9 @@ const Link = ({
     exact
     to={to}
   >
-    <li>
+    <li className={style.navLinkContent}>
       <FontAwesomeIcon className={style.navIcon} icon={[iconType, icon]} />
-      {label}
+      <span className={style.navLinkLabel}>{label}</span>
     </li>
   </NavLink>
 );
