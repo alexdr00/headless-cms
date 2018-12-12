@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import style from './styles.module.scss';
+import style from './styles/main.module.scss';
 
 const MenuButton = ({ onClick, isCollapsed }) => {
   // The bars are rotated to show an X

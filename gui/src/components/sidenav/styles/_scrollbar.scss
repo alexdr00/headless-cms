@@ -1,0 +1,17 @@
+.sidenav {
+  // width
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  // track
+  ::-webkit-scrollbar-track {
+    background: $primaryColor;
+  }
+
+  // handle
+  ::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background: $tertiaryColor;
+  }
+}

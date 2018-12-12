@@ -1,0 +1,48 @@
+.navLink {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  font-size: 0.5rem;
+  color: $textColor;
+  background-color: transparent;
+  margin: 3px 0;
+  min-height: 50px;
+
+  &:hover {
+    text-decoration: none;
+    color: $textColor;
+    background-color: $secondaryColor;
+  }
+
+  &Active {
+    .navLinkLabel {
+      font-weight: 700;
+    }
+
+    .navIcon {
+      color: $tertiaryColor;
+    }
+  }
+
+  &Content {
+    position: relative;
+  }
+
+  &Label {
+    margin-left: 55px;
+    text-align: left;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .navIcon {
+    font-size: 1rem;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+  }
+}

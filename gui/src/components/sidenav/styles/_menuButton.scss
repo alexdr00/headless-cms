@@ -1,0 +1,41 @@
+.menuButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(98%);
+  height: 2rem;
+  width: 2.3rem;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  border: none;
+  padding: 0 10px;
+  background-color: $secondaryColor;
+
+  &:focus {
+    outline: none;
+  }
+
+  .bar {
+    position: relative;
+    background-color: $textColor;
+    width: 100%;
+    height: 2px;
+    transition: 0.5s ease;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .firstBarRotated {
+    transform: rotate(130deg) translate(10px, -8px);
+  }
+
+  .secondBarRotated {
+    opacity: 0;
+  }
+
+  .thirdBarRotated {
+    transform: rotate(-130deg) translate(7px, 7px);
+  }
+}

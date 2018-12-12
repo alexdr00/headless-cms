@@ -1,0 +1,12 @@
+.navLinksSection {
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  overflow: auto;
+
+  background: linear-gradient(to left bottom, #5e2998 5%, $primaryColor 60%);
+}

@@ -1,0 +1,24 @@
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $secondaryColor;
+  margin-bottom: auto;
+  height: 2rem;
+
+  &Text {
+    text-align: center;
+    font-size: 1rem;
+    color: $textColor;
+    margin: auto;
+    font-weight: 700;
+
+    &:hover {
+      color: $textColor;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}

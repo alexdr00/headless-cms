@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { linksStructureType } from './propTypes';
-import style from './styles.module.scss';
+import style from './styles/main.module.scss';
 import NavLinksSection from './NavLinksSection';
 import MenuButton from './MenuButton';
 import Logo from './Logo';

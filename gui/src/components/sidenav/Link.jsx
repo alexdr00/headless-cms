@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import style from './styles.module.scss';
+import style from './styles/main.module.scss';
 import { linkType } from './propTypes';
 
 const Link = ({
