@@ -37,5 +37,10 @@ module.exports = {
       to: '/hola2w',
       label: 'That',
     },
+    {
+      to: '/eso',
+      label: 'nuevo label',
+      icon: 'bug',
+    },
   ],
 };

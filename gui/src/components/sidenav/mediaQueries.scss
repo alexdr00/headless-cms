@@ -1,0 +1,42 @@
+@media screen and (max-width: 1300px) {
+  .sidenav {
+    width: 20%;
+  }
+
+  .navLink {
+    font-size: 0.5rem;
+    min-height: 40px;
+
+    .navIcon {
+      font-size: 0.9rem;
+    }
+    &Label {
+      margin-left: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .sidenav {
+    width: 22%;
+  }
+
+  .navLink {
+    font-size: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidenav {
+    width: 85%;
+  }
+
+  .navLink {
+    font-size: 0.6rem;
+    min-height: 60px;
+
+    &Label {
+      margin-left: 60px;
+    }
+  }
+}

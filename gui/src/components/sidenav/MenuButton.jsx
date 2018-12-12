@@ -9,7 +9,7 @@ const MenuButton = ({ onClick, isCollapsed }) => {
   const thirdBarRotated = !isCollapsed ? style.thirdBarRotated : '';
 
   return (
-    <button onClick={onClick} type="button" className={style.menuButton}>
+    <button onClick={onClick} type="button" className={`${style.menuButton}`}>
       <div className={`${style.bar} ${firstBarRotated}`} />
       <div className={`${style.bar} ${secondBarRotated}`} />
       <div className={`${style.bar} ${thirdBarRotated}`} />

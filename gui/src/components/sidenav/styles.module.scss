@@ -1,6 +1,6 @@
 $primaryColor: #4c3195;
 $secondaryColor: darken($primaryColor, 10);
-$tertiaryColor: #e58216;
+$tertiaryColor: #ff8400;
 $textColor: #f6f5fa;
 
 .sidenav {
@@ -25,7 +25,7 @@ $textColor: #f6f5fa;
   top: 0;
   right: 0;
   transform: translateX(98%);
-  height: 10%;
+  height: 2rem;
   width: 2.3rem;
   border-bottom-right-radius: 10px;
   cursor: pointer;
@@ -80,7 +80,7 @@ $textColor: #f6f5fa;
   flex-direction: column;
   justify-content: center;
 
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   color: $textColor;
   background-color: transparent;
   margin: 3px 0;
@@ -107,7 +107,8 @@ $textColor: #f6f5fa;
   }
 
   &Label {
-    margin-left: 60px;
+    margin-left: 55px;
+    text-align: left;
     position: absolute;
     left: 0;
     top: 50%;
@@ -129,7 +130,7 @@ $textColor: #f6f5fa;
   justify-content: center;
   background-color: $secondaryColor;
   margin-bottom: auto;
-  height: 10%;
+  height: 2rem;
 
   &Text {
     text-align: center;
@@ -147,3 +148,24 @@ $textColor: #f6f5fa;
     text-decoration: none;
   }
 }
+
+// ** Custom Scrollbar
+.sidenav {
+  // width
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  // track
+  ::-webkit-scrollbar-track {
+    background: $primaryColor;
+  }
+
+  // handle
+  ::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background: $tertiaryColor;
+  }
+}
+
+@import './mediaQueries.scss';
