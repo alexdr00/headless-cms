@@ -2,45 +2,13 @@ module.exports = {
   links: [
     {
       to: '/',
-      label: 'Home',
-      icon: 'home',
-    },
-    {
-      to: '/we',
-      label: 'Whathervoooooo',
-    },
-    {
-      to: '/po',
       label: 'Content Type Builder',
       icon: 'hammer',
     },
     {
-      to: '/hola',
-      label: 'jsdf',
-      icon: 'circle',
-    },
-    {
-      to: '/hola2',
-      label: 'That',
-    },
-    {
-      to: '/poe',
-      label: 'Señores y Señoras',
-      icon: 'hammer',
-    },
-    {
-      to: '/holaw',
-      label: 'Frankstain',
-      icon: 'circle',
-    },
-    {
-      to: '/hola2w',
-      label: 'That',
-    },
-    {
-      to: '/eso',
-      label: 'nuevo label',
-      icon: 'bug',
+      to: '/sign_out',
+      label: 'Sign Out',
+      icon: 'sign-out-alt',
     },
   ],
 };

@@ -1,7 +1,7 @@
 import { string, arrayOf, shape } from 'prop-types';
 
-// The PropTypes needed in several sidenav subcomponents will be stored here,
-// in order to avoid repetition.
+// In order to avoid repetition,
+// the PropTypes needed in several sidenav subcomponents will be stored here.
 
 export const linkType = {
   to: string.isRequired,
