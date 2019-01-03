@@ -3,7 +3,7 @@ module.exports = {
   rules: {
     'max-len': ['error', { code: 80 }],
   },
-  env: { es6: true, browser: true },
+  env: { es6: true, browser: true, jest: true },
   parserOptions: {
     ecmaFeatures: {
       jsx: true,

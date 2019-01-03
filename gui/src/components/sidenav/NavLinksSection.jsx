@@ -1,11 +1,13 @@
 import React from 'react';
 import style from './styles/main.module.scss';
-import Link from './Link';
+import NavLink from './NavLink';
 import { linksStructureType } from './propTypes';
 
 const NavLinksSection = ({ links }) => {
   const renderLinks = () => {
-    const linkComponents = links.map(link => <Link key={link.to} {...link} />);
+    const linkComponents = links.map(link => (
+      <NavLink key={link.to} {...link} />
+    ));
 
     return linkComponents;
   };

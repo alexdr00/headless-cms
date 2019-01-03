@@ -5,6 +5,7 @@ import style from './styles/main.module.scss';
 import NavLinksSection from './NavLinksSection';
 import MenuButton from './MenuButton';
 import Logo from './Logo';
+import layout from '../../shared/styles/layout.module.scss';
 
 class Sidenav extends Component {
   state = {
@@ -18,7 +19,7 @@ class Sidenav extends Component {
   };
 
   render() {
-    const { links, className: layout } = this.props;
+    const { links } = this.props;
     const { isCollapsed } = this.state;
     const sidenavCollapsed = isCollapsed ? style.sidenavCollapsed : '';
 
