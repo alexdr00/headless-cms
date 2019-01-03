@@ -17,7 +17,7 @@ const testLinks = [
   },
 ];
 
-let sidenavWrapper;
+let sidenav;
 
 beforeAll(() => {
   const wrapper = mount(
@@ -26,18 +26,18 @@ beforeAll(() => {
     </Router>,
   );
 
-  sidenavWrapper = wrapper.find(Sidenav);
+  sidenav = wrapper.find(Sidenav);
 });
 
 describe('Side Navigation', () => {
   it('Collapses navigation when hamburger button is clicked', () => {
-    sidenavWrapper.find(MenuButton).simulate('click');
+    sidenav.find(MenuButton).simulate('click');
 
-    expect(sidenavWrapper.state().isCollapsed).toBe(true);
+    expect(sidenav.state().isCollapsed).toBe(true);
   });
 
   it('Renders the right number of links', () => {
-    const navLinksSection = sidenavWrapper.find(NavLinksSection).find('ul');
+    const navLinksSection = sidenav.find(NavLinksSection).find('ul');
     const numberOfLinks = navLinksSection.children().length;
 
     expect(numberOfLinks).toBe(2);
